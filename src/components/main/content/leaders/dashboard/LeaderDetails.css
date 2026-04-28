@@ -1,0 +1,42 @@
+.leader-details {
+    /* border: solid 2px lightcyan; */
+    /* padding-left: 1rem; */
+}
+
+/* .city-details-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;  
+} */
+
+/* .city-details-row .third {
+    width: calc(100%/3);
+} */
+
+/* .city-details-row .half {
+    width: calc(100%/2);
+} */
+
+/* .city-details-row .two-thirds {
+    width: calc((100%/3)*2);
+} */
+
+/* .city-details-row .whole {
+    width: 100%;
+} */
+
+.leader-details-item {
+    padding-top: 1vh;
+    padding-left: 1rem;
+}
+
+.leader-details-item .label {
+    font-size: 0.75rem;
+    font-weight: bold;
+    opacity: 0.5;
+}
+
+.leader-details-item .value {
+    font-size: 1.25rem;
+    /* font-weight: 100; */
+}

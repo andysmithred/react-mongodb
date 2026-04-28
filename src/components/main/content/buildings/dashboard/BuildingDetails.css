@@ -1,0 +1,14 @@
+.building-details-item {
+    padding-top: 1vh;
+    padding-left: 1rem;
+}
+
+.building-details-item .label {
+    font-size: 0.75rem;
+    font-weight: bold;
+    opacity: 0.5;
+}
+
+.building-details-item .value {
+    font-size: 1.25rem;
+}

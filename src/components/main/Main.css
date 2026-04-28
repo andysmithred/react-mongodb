@@ -1,0 +1,7 @@
+.main {
+    flex: 1;
+    /* border: solid 1px green; */
+    height: 86vh;
+    overflow: auto;
+    margin-bottom: 2rem;
+}

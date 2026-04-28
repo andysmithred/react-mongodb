@@ -1,0 +1,13 @@
+
+.details-list-items {
+    list-style-type: disc;
+    /* list-style-position: inside; */
+    /* border: solid 1px red; */
+}
+
+.details-list-items li {
+    /* font-weight: bold; */
+    /* padding-top: 1vh; */
+    /* padding-left: 1rem; */
+    /* border-bottom: solid 1px lightgray; */
+}

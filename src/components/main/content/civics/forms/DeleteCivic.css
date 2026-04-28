@@ -1,0 +1,20 @@
+.delete-civic {
+    /* border: solid 2px lightcyan; */
+    margin-top: 0.5rem;
+}
+
+.delete-civic .delete-civic-item {
+    padding-top: 1vh;
+    padding-left: 1rem;
+}
+
+.delete-civic .delete-civic-item .label {
+    font-size: 0.75rem;
+    font-weight: bolder;
+    opacity: 0.5;
+}
+
+.delete-civic .delete-civic-item .value {
+    font-size: 1.5rem;
+    font-weight: bold;
+}

@@ -1,0 +1,20 @@
+
+.details-list-button {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    /* margin-top: 0.5rem; */
+}
+
+.details-list-button-item {
+    border-bottom: dotted 2px darkslategray;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+.details-list-button-item button {
+    margin-right: -0.75rem;
+}
+
+/* .details-list-button-item:last-child {
+    border-bottom: none;
+} */

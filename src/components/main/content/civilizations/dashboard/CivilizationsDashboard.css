@@ -1,0 +1,25 @@
+.civilizations-dashboard {
+    width: 100%;
+    height: 100%; 
+    /* border: solid 2px blue; */
+}
+
+/* .cities-dashboard .row2 {
+    height: min-content;
+} */
+
+/* .leaders-dashboard-block {
+    height: 300px;
+}
+
+.civilizations-dashboard .third {
+    width: calc(100%/3);
+}
+
+.civilizations-dashboard .half {
+    width: calc(100%/2);
+}
+
+.civilizations-dashboard .two-thirds {
+    width: calc((100%/3)*2);
+} */

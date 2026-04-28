@@ -1,0 +1,25 @@
+.units-dashboard {
+    width: 100%;
+    height: 100%; 
+    /* border: solid 2px blue; */
+}
+
+/* .cities-dashboard .row2 {
+    height: min-content;
+} */
+
+.units-dashboard-block {
+    height: 300px;
+}
+
+.units-dashboard .third {
+    width: calc(100%/3);
+}
+
+.units-dashboard .half {
+    width: calc(100%/2);
+}
+
+.units-dashboard .two-thirds {
+    width: calc((100%/3)*2);
+}

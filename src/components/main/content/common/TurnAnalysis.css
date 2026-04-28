@@ -1,0 +1,25 @@
+.turn-analysis {
+    /* border: solid 2px blue; */
+    height: 100%;
+    margin-top: 1rem;
+    /* padding-right: 2rem; */
+    /* margin-bottom: 2rem; */
+}
+
+.turn-analysis .item {
+    border-bottom: dash 2px darkslategray;
+    margin-left: 0rem;
+    margin-right: 0rem;
+    margin-top: 0.5rem;
+    /* padding-right: 2rem; */
+
+    .label {
+        font-weight: 900;
+        font-size: large;
+    }
+
+    .value {
+        font-style: italic;
+        font-size: large;
+    }
+}

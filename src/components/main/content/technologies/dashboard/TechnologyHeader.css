@@ -1,0 +1,16 @@
+.technology-header {
+    width: 100%;
+    border-bottom: solid 1px darkslategrey;
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+
+.technology-header .image {
+    height: 7vh;
+    border-radius: 5px;
+}
+
+.technology-header .label {
+    margin-top: 1rem;
+    font-size: 3rem;
+}

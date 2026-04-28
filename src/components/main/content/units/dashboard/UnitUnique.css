@@ -1,0 +1,14 @@
+.unit-unique-item {
+    padding-top: 1vh;
+    padding-left: 1rem;
+}
+
+.unit-unique-item .label {
+    font-size: 0.75rem;
+    font-weight: bold;
+    opacity: 0.5;
+}
+
+.unit-unique-item .value {
+    font-size: 1.25rem;
+}

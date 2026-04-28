@@ -1,0 +1,42 @@
+.civilization-details {
+    /* border: solid 2px lightcyan; */
+    /* padding-left: 1rem; */
+}
+
+/* .city-details-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;  
+} */
+
+/* .city-details-row .third {
+    width: calc(100%/3);
+} */
+
+/* .city-details-row .half {
+    width: calc(100%/2);
+} */
+
+/* .city-details-row .two-thirds {
+    width: calc((100%/3)*2);
+} */
+
+/* .city-details-row .whole {
+    width: 100%;
+} */
+
+.civilization-details-item {
+    padding-top: 1vh;
+    padding-left: 1rem;
+}
+
+.civilization-details-item .label {
+    font-size: 0.75rem;
+    font-weight: bolder;
+    opacity: 0.5;
+}
+
+.civilization-details-item .value {
+    font-size: 1.25rem;
+    /* font-weight: bold; */
+}

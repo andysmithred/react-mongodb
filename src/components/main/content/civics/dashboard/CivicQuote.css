@@ -1,0 +1,27 @@
+.civic-quote {
+    border: solid 2px darkslategrey;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.civic-quote .label {
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: bolder;
+    color: var(--color-text-primary);
+}
+
+.civic-quote .content {
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.civic-quote .author {
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    font-style: italic;
+}

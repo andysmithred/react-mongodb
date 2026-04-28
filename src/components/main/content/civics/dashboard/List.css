@@ -1,0 +1,31 @@
+.list {
+    margin-bottom: 1rem;
+    border: solid 2px darkslategrey;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+
+    .label {
+        margin-left: 0.5rem;
+        margin-top: 0.5rem;
+        font-size: 1rem;
+        font-weight: 900;
+        color: var(--color-text-primary);
+    }
+
+    .content {
+        margin-left: 0.5rem;
+        margin-top: 0.5rem;
+        color: var(--color-text-primary);
+    }
+
+    .item {
+        font-size: 1rem;
+        font-weight: 100;
+        border-bottom: dotted 1px dark   slategrey;
+        color: var(--color-text-primary);
+        margin-bottom: 0.5rem;
+    }
+}

@@ -1,0 +1,18 @@
+
+.content-main {
+    /* border: solid 2px red; */
+}
+
+.content-main .container-fluid {
+    /* border: solid 2px blue; */
+    height: 100%;
+}
+
+.content-main .container-fluid .row {
+    /* border: solid 2px yellow; */
+    /* height: 50%; */
+}
+
+.content-main .container-fluid .row .col-sm {
+    /* border: solid 2px orange; */
+}

@@ -1,0 +1,24 @@
+.leader-header {
+    width: 100%;
+    border-bottom: solid 1px darkslategrey;
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+
+.leader-header .flags {
+    display: flex;
+    flex-direction: row;
+}
+
+.leader-header .image {
+    height: 6vh;
+    border-radius: 5px;
+}
+
+.leader-header .label {
+    font-size: 2rem;
+}
+
+.leader-header .complete {
+    height: 3vh;
+}

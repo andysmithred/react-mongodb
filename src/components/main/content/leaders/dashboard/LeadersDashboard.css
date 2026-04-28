@@ -1,0 +1,25 @@
+.leaders-dashboard {
+    width: 100%;
+    height: 100%; 
+    /* border: solid 2px blue; */
+}
+
+/* .cities-dashboard .row2 {
+    height: min-content;
+} */
+
+/* .leaders-dashboard-block {
+    height: 300px;
+}
+
+.leaders-dashboard .third {
+    width: calc(100%/3);
+}
+
+.leaders-dashboard .half {
+    width: calc(100%/2);
+}
+
+.leaders-dashboard .two-thirds {
+    width: calc((100%/3)*2);
+} */

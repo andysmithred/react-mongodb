@@ -1,0 +1,15 @@
+.wonder-header {
+    width: 100%;
+    border-bottom: solid 1px darkslategrey;
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+
+.wonder-header .image {
+    height: 6vh;
+    border-radius: 5px;
+}
+
+.wonder-header .label {
+    font-size: 2rem;
+}
