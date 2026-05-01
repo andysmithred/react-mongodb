@@ -54,6 +54,9 @@ const AddTechnology = ({ onAdd }) => {
     const [masteryActionItem, setMasteryActionItem] = useState("");
     const [masteryActions, setMasteryActions] = useState([]);
 
+    const [tagItem, setTagItem] = useState("");
+    const [tags, setTags] = useState([]);
+
     const handleFormSubmit = (e) => {
         e.preventDefault();
 
@@ -88,125 +91,15 @@ const AddTechnology = ({ onAdd }) => {
         onAdd(technology);
     };
 
-    const handleAddRequire = () => {
-        if (!requireItem) return;
-        setRequires([...requires, requireItem]);
-        setRequireItem("");
+    const addItem = (item, list, setter, clearSetter) => {
+        if (!item) return;
+        setter([...list, item]);
+        clearSetter("");
     };
 
-    const handleRemoveRequireItem = (index) => {
-        setRequires(requires.filter((_, i) => i !== index));
+    const removeItem = (index, list, setter) => {
+        setter(list.filter((_, i) => i !== index));
     };
-
-    const handleAddLead = () => {
-        if (!leadItem) return;
-        setLeads([...leads, leadItem]);
-        setLeadItem("");
-    };
-
-    const handleRemoveLeadItem = (index) => {
-        setLeads(leads.filter((_, i) => i !== index));
-    };
-
-    const handleAddUnlockUnit = () => {
-        if (!unlockUnitItem) return;
-        setUnlockUnits([...unlockUnits, unlockUnitItem]);
-        setUnlockUnitItem("");
-    }
-
-    const handleRemoveUnlockUnit = (index) => {
-        setUnlockUnits(unlockUnits.filter((_, i) => i !== index));
-    }
-
-    const handleAddUnlockWonder = () => {
-        if (!unlockWonderItem) return;
-        setUnlockWonders([...unlockWonders, unlockWonderItem]);
-        setUnlockWonderItem("");
-    }
-
-    const handleRemoveUnlockWonder = (index) => {
-        setUnlockWonders(unlockWonders.filter((_, i) => i !== index));
-    }
-
-    const handleAddUnlockBuilding = () => {
-        if (!unlockBuildingItem) return;
-        setUnlockBuildings([...unlockBuildings, unlockBuildingItem]);
-        setUnlockBuildingItem("");
-    };
-
-    const handleRemoveUnlockBuilding = (index) => {
-        setUnlockBuildings(unlockBuildings.filter((_, i) => i !== index));
-    }
-
-    const handleAddUnlockEffect = () => {
-        if (!unlockEffectItem) return;
-        setUnlockEffects([...unlockEffects, unlockEffectItem]);
-        setUnlockEffectItem("");
-    };
-
-    const handleRemoveUnlockEffect = (index) => {
-        setUnlockEffects(unlockEffects.filter((_, i) => i !== index));
-    };
-
-    const handleAddUnlockProject = () => {
-        if (!unlockProjectItem) return;
-        setUnlockProjects([...unlockProjects, unlockProjectItem]);
-        setUnlockProjectItem("");
-    };
-
-    const handleRemoveUnlockProject = (index) => {
-        setUnlockProjects(unlockProjects.filter((_, i) => i !== index));
-    };
-
-    const handleAddUnlockAction = () => {
-        if (!unlockActionItem) return;
-        setUnlockActions([...unlockActions, unlockActionItem]);
-        setUnlockActionItem("");
-    };
-
-    const handleRemoveUnlockAction = (index) => {
-        setUnlockActions(unlockActions.filter((_, i) => i !== index));
-    };
-
-    const handleAddMasteryEffect = () => {
-        if (!masteryEffectItem) return;
-        setMasteryEffects([...masteryEffects, masteryEffectItem]);
-        setMasteryEffectItem("");
-    };
-
-    const handleRemoveMasteryEffect = (index) => {
-        setMasteryEffects(masteryEffects.filter((_, i) => i !== index));
-    };
-
-    const handleAddMasteryBuilding = () => {
-        if (!masteryBuildingItem) return;
-        setMasteryBuildings([...masteryBuildings, masteryBuildingItem]);
-        setMasteryBuildingItem("");
-    };
-
-    const handleRemoveMasteryBuilding = (index) => {
-        setMasteryBuildings(masteryBuildings.filter((_, i) => i !== index));
-    };  
-
-    const handleAddMasteryWonder = () => {
-        if (!masteryWonderItem) return;
-        setMasteryWonders([...masteryWonders, masteryWonderItem]);
-        setMasteryWonderItem("");
-    };
-
-    const handleRemoveMasteryWonder = (index) => {
-        setMasteryWonders(masteryWonders.filter((_, i) => i !== index));
-    };
-
-    const handleAddMasteryAction = () => {
-        if (!masteryActionItem) return;
-        setMasteryActions([...masteryActions, masteryActionItem]);
-        setMasteryActionItem("");
-    };
-
-    const handleRemoveMasteryAction = (index) => {
-        setMasteryActions(masteryActions.filter((_, i) => i !== index));
-    };  
 
     return (
         <form className="m-2" onSubmit={handleFormSubmit}>
@@ -232,42 +125,42 @@ const AddTechnology = ({ onAdd }) => {
                                 placeholder="Add Unit..."
                                 input={unlockUnitItem}
                                 setInput={setUnlockUnitItem}
-                                onAdd={handleAddUnlockUnit}
+                                onAdd={() => addItem(unlockUnitItem, unlockUnits, setUnlockUnits, setUnlockUnitItem)}
                             />
                             <InputStringButton
                                 label="Wonder"
                                 placeholder="Add Wonder..."
                                 input={unlockWonderItem}
                                 setInput={setUnlockWonderItem}
-                                onAdd={handleAddUnlockWonder}
+                                onAdd={() => addItem(unlockWonderItem, unlockWonders, setUnlockWonders, setUnlockWonderItem)}
                             />
                             <InputStringButton
                                 label="Building"
                                 placeholder="Add Building..."
                                 input={unlockBuildingItem}
                                 setInput={setUnlockBuildingItem}
-                                onAdd={handleAddUnlockBuilding}
+                                onAdd={() => addItem(unlockBuildingItem, unlockBuildings, setUnlockBuildings, setUnlockBuildingItem)}
                             />
                             <InputStringButton
                                 label="Effect"
                                 placeholder="Add Effect..."
                                 input={unlockEffectItem}
                                 setInput={setUnlockEffectItem}
-                                onAdd={handleAddUnlockEffect}
+                                onAdd={() => addItem(unlockEffectItem, unlockEffects, setUnlockEffects, setUnlockEffectItem)}
                             /> 
                             <InputStringButton
                                 label="Project"
                                 placeholder="Add Project..."
                                 input={unlockProjectItem}
                                 setInput={setUnlockProjectItem}
-                                onAdd={handleAddUnlockProject}
+                                onAdd={() => addItem(unlockProjectItem, unlockProjects, setUnlockProjects, setUnlockProjectItem)}
                             />
                             <InputStringButton
                                 label="Action"
                                 placeholder="Add Action..."
                                 input={unlockActionItem}
                                 setInput={setUnlockActionItem}
-                                onAdd={handleAddUnlockAction}
+                                onAdd={() => addItem(unlockActionItem, unlockActions, setUnlockActions, setUnlockActionItem)}
                             />
                         </div>
                     </div>
@@ -278,7 +171,7 @@ const AddTechnology = ({ onAdd }) => {
                         <DetailsHeader label="Units" />
                         <DetailsListButton 
                             list={unlockUnits.map(unit => unit)}
-                            onRemove={handleRemoveUnlockUnit}
+                            onRemove={(index) => removeItem(index, unlockUnits, setUnlockUnits)}
                         />
                     </div>)}
                     {unlockWonders.length > 0 && (
@@ -286,7 +179,7 @@ const AddTechnology = ({ onAdd }) => {
                         <DetailsHeader label="Wonders" />
                         <DetailsListButton 
                             list={unlockWonders.map(wonder => wonder)}
-                            onRemove={handleRemoveUnlockWonder}
+                            onRemove={(index) => removeItem(index, unlockWonders, setUnlockWonders)}
                         />
                     </div>)}
                     {unlockBuildings.length > 0 && (
@@ -294,7 +187,7 @@ const AddTechnology = ({ onAdd }) => {
                         <DetailsHeader label="Buildings" />
                         <DetailsListButton 
                             list={unlockBuildings.map(building => building)}
-                            onRemove={handleRemoveUnlockBuilding}
+                            onRemove={(index) => removeItem(index, unlockBuildings, setUnlockBuildings)}
                         />
                     </div>)}
                     {unlockEffects.length > 0 && (
@@ -302,7 +195,7 @@ const AddTechnology = ({ onAdd }) => {
                         <DetailsHeader label="Effects" />
                         <DetailsListButton 
                             list={unlockEffects.map(effect => effect)}
-                            onRemove={handleRemoveUnlockEffect}
+                            onRemove={(index) => removeItem(index, unlockEffects, setUnlockEffects)}
                         />
                     </div>)}
                     {unlockProjects.length > 0 && (
@@ -310,7 +203,7 @@ const AddTechnology = ({ onAdd }) => {
                         <DetailsHeader label="Projects" />
                         <DetailsListButton 
                             list={unlockProjects.map(project => project)}
-                            onRemove={handleRemoveUnlockProject}
+                            onRemove={(index) => removeItem(index, unlockProjects, setUnlockProjects)}
                         />
                     </div>)}
                     {unlockActions.length > 0 && (
@@ -318,7 +211,7 @@ const AddTechnology = ({ onAdd }) => {
                         <DetailsHeader label="Actions" />
                         <DetailsListButton 
                             list={unlockActions.map(action => action)}
-                            onRemove={handleRemoveUnlockAction}
+                            onRemove={(index) => removeItem(index, unlockActions, setUnlockActions)}
                         />
                     </div>)}
                 </div>
@@ -331,28 +224,28 @@ const AddTechnology = ({ onAdd }) => {
                                 placeholder="Add Effect..."
                                 input={masteryEffectItem}
                                 setInput={setMasteryEffectItem}
-                                onAdd={handleAddMasteryEffect}
+                                onAdd={() => addItem(masteryEffectItem, masteryEffects, setMasteryEffects, setMasteryEffectItem)}
                             />
                             <InputStringButton
                                 label="Building"
                                 placeholder="Add Building..."
                                 input={masteryBuildingItem}
                                 setInput={setMasteryBuildingItem}
-                                onAdd={handleAddMasteryBuilding}
+                                onAdd={() => addItem(masteryBuildingItem, masteryBuildings, setMasteryBuildings, setMasteryBuildingItem)}
                             />
                             <InputStringButton
                                 label="Wonder"
                                 placeholder="Add Wonder..."
                                 input={masteryWonderItem}
                                 setInput={setMasteryWonderItem}
-                                onAdd={handleAddMasteryWonder}
+                                onAdd={() => addItem(masteryWonderItem, masteryWonders, setMasteryWonders, setMasteryWonderItem)}
                             />
                             <InputStringButton
                                 label="Action"
                                 placeholder="Add Action..."
                                 input={masteryActionItem}
                                 setInput={setMasteryActionItem}
-                                onAdd={handleAddMasteryAction}
+                                onAdd={() => addItem(masteryActionItem, masteryActions, setMasteryActions, setMasteryActionItem)}
                             />
                         </div>
                     </div>
@@ -363,7 +256,7 @@ const AddTechnology = ({ onAdd }) => {
                         <DetailsHeader label="Effects" />
                         <DetailsListButton 
                             list={masteryEffects.map(effect => effect)}
-                            onRemove={handleRemoveMasteryEffect}
+                            onRemove={(index) => removeItem(index, masteryEffects, setMasteryEffects)}
                         />
                     </div>)}
                     {masteryBuildings.length > 0 && (
@@ -371,7 +264,7 @@ const AddTechnology = ({ onAdd }) => {
                         <DetailsHeader label="Buildings" />
                         <DetailsListButton 
                             list={masteryBuildings.map(building => building)}
-                            onRemove={handleRemoveMasteryBuilding}
+                            onRemove={(index) => removeItem(index, masteryBuildings, setMasteryBuildings)}
                         />
                     </div>)}
                     {masteryWonders.length > 0 && (
@@ -379,7 +272,7 @@ const AddTechnology = ({ onAdd }) => {
                         <DetailsHeader label="Wonders" />
                         <DetailsListButton 
                             list={masteryWonders.map(wonder => wonder)}
-                            onRemove={handleRemoveMasteryWonder}
+                            onRemove={(index) => removeItem(index, masteryWonders, setMasteryWonders)}
                         />
                     </div>)}
                     {masteryActions.length > 0 && (
@@ -387,7 +280,7 @@ const AddTechnology = ({ onAdd }) => {
                         <DetailsHeader label="Actions" />   
                         <DetailsListButton 
                             list={masteryActions.map(action => action)}
-                            onRemove={handleRemoveMasteryAction}
+                            onRemove={(index) => removeItem(index, masteryActions, setMasteryActions)}
                         />
                     </div>)}
                 </div>
@@ -400,12 +293,12 @@ const AddTechnology = ({ onAdd }) => {
                                 placeholder="Add Civic..."
                                 input={requireItem}
                                 setInput={setRequireItem}
-                                onAdd={handleAddRequire}
+                                onAdd={() => addItem(requireItem, requires, setRequires, setRequireItem)}
                             />
                         </div>
                         <DetailsListButton 
                             list={requires.map(require => require)}
-                            onRemove={handleRemoveRequireItem}
+                            onRemove={(index) => removeItem(index, requires, setRequires)}
                         />
                     </div>
                     <div className="mb-3">
@@ -416,12 +309,28 @@ const AddTechnology = ({ onAdd }) => {
                                 placeholder="Add Civic..."
                                 input={leadItem}
                                 setInput={setLeadItem}
-                                onAdd={handleAddLead}
+                                onAdd={() => addItem(leadItem, leads, setLeads, setLeadItem)}
                             />
                         </div>
                         <DetailsListButton 
                             list={leads.map(lead => lead)}
-                            onRemove={handleRemoveLeadItem}
+                            onRemove={(index) => removeItem(index, leads, setLeads)}
+                        />
+                    </div>
+                    <div className="mb-3">
+                        <DetailsHeader label="Tags" />
+                        <div className="mt-3">
+                            <InputStringButton
+                                label="Tag"
+                                placeholder="Add Tag..."
+                                input={tagItem}
+                                setInput={setTagItem}
+                                onAdd={() => addItem(tagItem, tags, setTags, setTagItem)}
+                            />
+                        </div>
+                        <DetailsListButton 
+                            list={tags.map(tagItem => tagItem)}
+                            onRemove={(index) => removeItem(index, tags, setTags)}
                         />
                     </div>
                 </div>

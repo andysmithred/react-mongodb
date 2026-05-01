@@ -14,6 +14,7 @@ import TechnologyDetailsList from "../list/TechnologyDetailsList";
 import WonderDetailsList from "../../wonders/list/WonderDetailsList";
 import UnitDetailsList from "../../units/list/UnitDetailsList";
 import BuildingDetailsList from "../../buildings/list/BuildingDetailsList";
+import Tags from "../../common/Tags";
 
 
 const TechnologiesDashboard = () => {
@@ -38,9 +39,7 @@ const TechnologiesDashboard = () => {
             <div className="row">
                 <div className="col-lg-3 mb-5">
                     <TechnologyDetails technology={technology} />
-                    <div>
-                        <TurnAnalysis2 value={technology.cost || 0} header="Science Needed" />
-                    </div>
+                    <TurnAnalysis2 value={technology.cost || 0} header="Science Needed" />
                 </div>
                 <div className="col-lg-9 mb-5">
                     <div className="row mb-5">
@@ -55,6 +54,11 @@ const TechnologiesDashboard = () => {
                         { technology.leads && technology.leads.length > 0 && (
                             <div className="col-lg-3">
                                 <TechnologyDetailsList technologies={technology.leads} label="Leads" />
+                            </div>  
+                        )}
+                        { technology.tags && technology.tags.length > 0 && (
+                            <div className="col-lg-3">
+                                <Tags tags={technology.tags} />
                             </div>  
                         )}
                     </div>

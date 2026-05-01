@@ -26,6 +26,7 @@ const TechnologiesIndexView = () => {
         },
         { field: "requires", valueFormatter: (params) => params.value?.join(", ") },
         { field: "leads", valueFormatter: (params) => params.value?.join(", ") },
+        { field: "tags", valueFormatter: (params) => params.value?.join(", ") },
         { field: "unlocks.buildings", valueFormatter: (params) => params.value?.join(", ") },
         { field: "unlocks.effects", valueFormatter: (params) => params.value?.join(", ") }, 
         { field: "unlocks.units", valueFormatter: (params) => params.value?.join(", ") },

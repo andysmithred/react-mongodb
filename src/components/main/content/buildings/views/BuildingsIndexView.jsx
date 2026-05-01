@@ -32,6 +32,7 @@ const BuildingsIndexView = () => {
         { field: "yields.base", valueFormatter: (params) => params.value?.join(", ") },
         { field: "yields.adjacency", valueFormatter: (params) => params.value?.join(", ") },
         { field: "yields.effects", valueFormatter: (params) => params.value?.join(", ") },
+        { field: "tags", valueFormatter: (params) => params.value?.join(", ") },
     ];
 
     const rowClickedHandler = (data) => {

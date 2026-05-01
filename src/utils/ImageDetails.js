@@ -143,6 +143,14 @@ export const ImageDetails = {
         {
             name: "Trade Route",
             icon: "Trade_Route_29.webp",
+        },
+        {
+            name: "Movement",
+            icon: "Movement_29.webp",
+        },
+        {
+            name: "Settlement Limit",
+            icon: "Settlement_Limit_29.webp",
         }
     ],
     // TODO:AS -> possibly remove
