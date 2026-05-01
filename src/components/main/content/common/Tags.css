@@ -1,0 +1,33 @@
+.tags {
+    /* border: solid 2px lightcyan; */
+}
+
+.tag {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 0.75rem;
+    margin-top: 0.5rem;
+    width: 100%;
+    border-bottom: dashed 2px darkslategray;
+}
+
+.tag .icon {
+    width: 25px;
+    height: 25px;
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.tag .icon-container {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    border-radius: 50%;
+}
+
+.tag .label {
+    font-size: 1.25rem;
+    /* font-weight: bold; */
+    padding-left: 1rem;
+    /* opacity: 1; */
+}

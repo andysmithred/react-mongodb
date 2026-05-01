@@ -22,6 +22,7 @@ const WondersIndexView = () => {
         { field: "associated" },
         { field: "requires", valueFormatter: (params) => params.value?.join(", ") },
         { field: "placement" },
+        { field: "tags", valueFormatter: (params) => params.value?.join(", ") },
         { field: "effects", valueFormatter: (params) => params.value?.join(", ") },
     ];
 

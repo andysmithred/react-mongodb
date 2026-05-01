@@ -19,7 +19,8 @@ const EditWonder = ({ onEdit }) => {
         placement: "",
         quote: { text: "", author: "" },
         requires: [],
-        effects: []
+        effects: [],
+        tags: []
     };
 
     const [name, setName] = useState(wonder.name || "");
@@ -37,6 +38,9 @@ const EditWonder = ({ onEdit }) => {
 
     const [effectItem, setEffectItem] = useState("");
     const [effects, setEffects] = useState(wonder.effects || []);
+
+    const [tagItem, setTagItem] = useState("");
+    const [tags, setTags] = useState(wonder.tags || []);
 
     if (!selectedWonder) {
         return <div className="m-3">No wonder selected.</div>;
@@ -58,7 +62,8 @@ const EditWonder = ({ onEdit }) => {
                 author: quoteAuthor
             },
             requires,
-            effects
+            effects,
+            tags
         };
 
         onEdit(updatedWonder);
@@ -123,6 +128,24 @@ const EditWonder = ({ onEdit }) => {
                         <DetailsListButton 
                             list={effects.map(effectItem => effectItem)}
                             onRemove={(index) => removeItem(index, effects, setEffects)}
+                        />
+                    </div>
+                </div>
+                <div className="col-lg-2">
+                    <div className="mb-3">
+                        <DetailsHeader label="Tags" />
+                        <div className="mt-3">
+                            <InputStringButton
+                                label="Tag"
+                                placeholder="Add Tag..."
+                                input={tagItem}
+                                setInput={setTagItem}
+                                onAdd={() => addItem(tagItem, tags, setTags, setTagItem)}
+                            />
+                        </div>
+                        <DetailsListButton 
+                            list={tags.map(tagItem => tagItem)}
+                            onRemove={(index) => removeItem(index, tags, setTags)}
                         />
                     </div>
                 </div>

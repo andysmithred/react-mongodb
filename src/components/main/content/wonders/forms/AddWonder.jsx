@@ -24,6 +24,9 @@ const AddWonder = ({ onAdd }) => {
     const [effectItem, setEffectItem] = useState("");
     const [effects, setEffects] = useState([]);
 
+    const [tagItem, setTagItem] = useState("");
+    const [tags, setTags] = useState([]);
+
     const handleFormSubmit = (e) => {
         e.preventDefault();
 
@@ -39,7 +42,8 @@ const AddWonder = ({ onAdd }) => {
                 author: quoteAuthor
             },
             requires,
-            effects
+            effects,
+            tags
         };
 
         onAdd(wonder);
@@ -104,6 +108,24 @@ const AddWonder = ({ onAdd }) => {
                         <DetailsListButton 
                             list={effects.map(effectItem => effectItem)}
                             onRemove={(index) => removeItem(index, effects, setEffects)}
+                        />
+                    </div>
+                </div>
+                <div className="col-lg-2">
+                    <div className="mb-3">
+                        <DetailsHeader label="Tags" />
+                        <div className="mt-3">
+                            <InputStringButton
+                                label="Tag"
+                                placeholder="Add Tag..."
+                                input={tagItem}
+                                setInput={setTagItem}
+                                onAdd={() => addItem(tagItem, tags, setTags, setTagItem)}
+                            />
+                        </div>
+                        <DetailsListButton 
+                            list={tags.map(tagItem => tagItem)}
+                            onRemove={(index) => removeItem(index, tags, setTags)}
                         />
                     </div>
                 </div>
