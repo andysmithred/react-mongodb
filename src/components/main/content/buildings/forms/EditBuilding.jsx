@@ -55,6 +55,9 @@ const EditBuilding = ({ onEdit }) => {
     const [effectItem, setEffectItem] = useState("");
     const [effectYields, setEffectYields] = useState(building.yields?.effects || []);
 
+    const [tagItem, setTagItem] = useState("");
+    const [tags, setTags] = useState(building.tags || []);
+
     if (!selectedBuilding) {
         return <div className="m-3">No building selected.</div>;
     }
@@ -86,7 +89,8 @@ const EditBuilding = ({ onEdit }) => {
                 base: baseYields,
                 adjacency: adjacencyYields,
                 effects: effectYields
-            }
+            },
+            tags
         };
 
         onEdit(updatedBuilding);
@@ -138,6 +142,24 @@ const EditBuilding = ({ onEdit }) => {
                         <DetailsListButton 
                             list={placement.map(placementItem => placementItem)}
                             onRemove={(index) => removeItem(index, placement, setPlacement)}
+                        />
+                    </div>
+                </div>
+                <div className="col-lg-2">
+                    <div className="mb-3">
+                        <DetailsHeader label="Tags" />
+                        <div className="mt-3">
+                            <InputStringButton
+                                label="Tag"
+                                placeholder="Add Tag..."
+                                input={tagItem}
+                                setInput={setTagItem}
+                                onAdd={() => addItem(tagItem, tags, setTags, setTagItem)}
+                            />
+                        </div>
+                        <DetailsListButton 
+                            list={tags.map(tagItem => tagItem)}
+                            onRemove={(index) => removeItem(index, tags, setTags)}
                         />
                     </div>
                 </div>

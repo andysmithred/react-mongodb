@@ -37,6 +37,9 @@ const AddBuilding = ({ onAdd }) => {
     const [effectItem, setEffectItem] = useState("");
     const [effectYields, setEffectYields] = useState([]);
 
+    const [tagItem, setTagItem] = useState("");
+    const [tags, setTags] = useState([]);
+
     const handleFormSubmit = (e) => {
         e.preventDefault();
 
@@ -63,7 +66,8 @@ const AddBuilding = ({ onAdd }) => {
                 base: baseYields,
                 adjacency: adjacencyYields,
                 effects: effectYields
-            }
+            },
+            tags
         };
 
         onAdd(building);
@@ -115,6 +119,24 @@ const AddBuilding = ({ onAdd }) => {
                         <DetailsListButton 
                             list={placement.map(placementItem => placementItem)}
                             onRemove={(index) => removeItem(index, placement, setPlacement)}
+                        />
+                    </div>
+                </div>
+                <div className="col-lg-2">
+                    <div className="mb-3">
+                        <DetailsHeader label="Tags" />
+                        <div className="mt-3">
+                            <InputStringButton
+                                label="Tag"
+                                placeholder="Add Tag..."
+                                input={tagItem}
+                                setInput={setTagItem}
+                                onAdd={() => addItem(tagItem, tags, setTags, setTagItem)}
+                            />
+                        </div>
+                        <DetailsListButton 
+                            list={tags.map(tagItem => tagItem)}
+                            onRemove={(index) => removeItem(index, tags, setTags)}
                         />
                     </div>
                 </div>

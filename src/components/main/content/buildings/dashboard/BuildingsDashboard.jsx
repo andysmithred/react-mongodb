@@ -7,6 +7,7 @@ import BuildingDetails from "./BuildingDetails";
 import Quote from "../../common/Quote";
 import DetailsList2 from "../../common/DetailsList2";
 import { setBuildingDefault } from "../../../../../reducers/buildings/buildingsSlice";
+import Tags from "../../common/Tags";
 
 const BuildingsDashboard = () => {
     const fetching = useSelector((state) => state.buildings.fetchingItems);
@@ -43,6 +44,11 @@ const BuildingsDashboard = () => {
                 {building.yields && building.yields.effects && building.yields.effects.length > 0 && (
                     <div className="col-lg-3">
                         <DetailsList2 list={building.yields.effects} label="Effects" />
+                    </div>
+                )}
+                {building.tags && building.tags.length > 0 && (
+                    <div className="col-lg-3">
+                        <Tags tags={building.tags} />
                     </div>
                 )}
             </div>
